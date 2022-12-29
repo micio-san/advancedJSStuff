@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$specialClr: #35849c;
+$darkClr:#202029;
+$lightClr:#e9eff1;
+$greenClr:#73e74d;
+
+body{
+    font-family: sans-serif;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+    background: $darkClr;
+}
+
+.input-edit,
+input {
+    width: 100%;
+    height: 100%; 
+    border-radius: 20px;
+    border: 1px solid $lightClr;
+    outline: none;
+    padding: 0px 5px;
+    background: $darkClr;
+    color: $lightClr;
+    font-size: 15px;
+    box-shadow:
+     inset  4px 5px 6px rgba(4, 4, 4, 0.861),
+     4px 5px 6px rgba(4, 4, 4, 0.861);
+}
+
+main {
+    background: $darkClr;
+    width: 330px;    
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid $lightClr;
+    box-shadow: 4px 15px 16px rgba(4, 4, 4, 0.861);
+    .todos-number {
+        color: $lightClr;
+        text-align: center;
+    }
+    .form-main {
+        width: 100%;
+        height: 50px;
+        position: relative;
+       
+        button{
+            position: absolute;
+            right: 5px;
+            width: 40px;
+            height: 40px; 
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            background: $specialClr;
+            color: $lightClr;
+            font-size: 15px;
+            cursor: pointer;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    ul{
+        padding:10px 0px;
+        list-style: none;
+        li {
+            margin: 15px 0px;
+            width: 100%;
+            background: $darkClr;
+            border-radius:10px;
+            border: 1px solid $lightClr;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            padding: 10px 5px;
+            .icons-container{
+                width: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                svg{
+                    width: 30px;
+                    height: 30px;
+                    color: $lightClr;
+                    cursor: pointer;
+                    pointer-events: none;
+                    path {
+
+                        pointer-events: none;
+                    }
+                    &:hover {
+                        color: $specialClr;
+                    }
+                }
+            }
+            .todo-text{
+                color: $lightClr;
+                font-weight: 500;
+                text-transform: capitalize;
+                font-size: 20px;
+            }
+            .form-edit{
+                display: none;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0px;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    background: $darkClr;
+                    border-radius:10px;
+                    border: 1px solid $lightClr;
+                }
+                button {
+                    background: none;
+                    border: none;
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    svg{
+                        width: 40px;
+                        height: 40px;
+                        color: $specialClr;
+                        cursor: pointer;
+                        pointer-events: none;
+                        path {
+    
+                            pointer-events: none;
+                        }
+                        &:hover {
+                            color: $specialClr;
+                        }
+                    }
+                }
+                &.show {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
